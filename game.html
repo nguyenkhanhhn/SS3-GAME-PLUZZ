@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <img id="img1" src="cat1.jpg" alt="cat1" onclick="ClickMe(1)" width="800" />
+    <img id="img2" src="cat2.jpg" alt="cat2" onclick="ClickMe(2)" width="800" />
+    <img id="img3" src="cat3.jpg" alt="cat3" onclick="ClickMe(3)" width="800" />
+    <img id="img4" src="cat4.jpg" alt="cat4" onclick="ClickMe(4)" width="800" />
+    <img id="img5" src="cat5.jpg" alt="cat5" onclick="ClickMe(5)" width="800" />
+</form>
+<!--<button type="button" onclick="Click">Click1</button>-->
+<script>
+    function ClickMe(index) {
+        let namecat="cat" + index;
+        let namepanda = "panda" +index;
+        let namemonkey = "monkey" +index;
+         let img = document.getElementById("img"+ index);
+         switch (img.alt) {
+             case namecat:
+                 img.alt=namemonkey;
+                 break;
+             case namemonkey :
+                 img.alt=namepanda;
+                 break;
+             case namepanda:
+                 img.alt=namecat;
+                 break;
+
+         }
+         document.getElementById("img"+index).src = img.alt +".jpg";
+    }
+</script>
+</body>
+</html>
